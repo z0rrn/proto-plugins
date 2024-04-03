@@ -1,0 +1,29 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "hugo"
+type = "cli"
+
+[platform.macos]
+download-file = "hugo_extended_{version}_darwin-universal.tar.gz"
+
+[platform.linux]
+download-file = "hugo_extended_{version}_linux-{arch}.tar.gz"
+
+[platform.windows]
+download-file = "hugo_extended_{version}_windows-{arch}.zip"
+
+[install]
+checksum-url = "https://github.com/gohugoio/hugo/releases/download/v{version}/hugo_{version}_checksums.txt"
+download-url = "https://github.com/gohugoio/hugo/releases/download/v{version}/{download_file}"
+
+[install.arch]
+x64 = "amd64"
+x86_64 = "amd64"
+aarch64 = "arm64"
+
+[install.primary]
+exe-path = "hugo"
+
+[resolve]
+git-url = "https://github.com/gohugoio/hugo"
