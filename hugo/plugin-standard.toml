@@ -43,4 +43,3 @@ exe-path = "hugo"
 
 [resolve]
 git-url = "https://github.com/gohugoio/hugo"
-

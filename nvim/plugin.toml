@@ -1,0 +1,30 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "nvim"
+type = "cli"
+
+[platform.linux]
+archive-prefix = "nvim-linux64"
+checksum-file = "nvim-linux64.tar.gz.sha256sum"
+download-file = "nvim-linux64.tar.gz"
+
+[platform.macos]
+archive-prefix = "nvim-macos"
+checksum-file = "nvim-macos.tar.gz.sha256sum"
+download-file = "nvim-macos.tar.gz"
+
+[platform.windows]
+archive-prefix = "nvim-win64"
+checksum-file = "nvim-win64.zip.sha256sum"
+download-file = "nvim-win64.zip"
+
+[install]
+checksum-url = "https://github.com/neovim/neovim/releases/download/v{version}/{checksum_file}"
+download-url = "https://github.com/neovim/neovim/releases/download/v{version}/{download_file}"
+
+[install.primary]
+exe-path = "bin/nvim"
+
+[resolve]
+git-url = "https://github.com/neovim/neovim"
