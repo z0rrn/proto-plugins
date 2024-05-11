@@ -1,0 +1,38 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "minify"
+type = "cli"
+
+[platform.macos]
+download-file = "minify_darwin_{arch}.tar.gz"
+
+[platform.freebsd]
+download-file = "minify_freebsd_amd64.tar.gz"
+
+[platform.linux]
+download-file = "minify_linux_{arch}.tar.gz"
+
+[platform.netbsd]
+download-file = "minify_netbsd_amd64.tar.gz"
+
+[platform.openbsd]
+download-file = "minify_openbsd_amd64.tar.gz"
+
+[platform.windows]
+download-file = "minify_windows_amd64.zip"
+
+[install]
+checksum-url = "https://github.com/tdewolff/minify/releases/download/v{version}/checksums.txt"
+download-url = "https://github.com/tdewolff/minify/releases/download/v{version}/{download_file}"
+
+[install.arch]
+x64 = "amd64"
+x86_64 = "amd64"
+aarch64 = "arm64"
+
+[install.primary]
+exe-path = "minify"
+
+[resolve]
+git-url = "https://github.com/tdewolff/minify"
